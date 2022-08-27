@@ -7,7 +7,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'greenverse',
         'USER': 'greenverse',
-        'PASSWORD': 'gautam847224',
+        'PASSWORD': '',
         'HOST': 'greenverse.mysql.pythonanywhere-services.com',
         'PORT': '3306',
     }
