@@ -81,10 +81,10 @@ DATABASES = {
     }
 }
 
-# try:
-#     from mysite.settings_local import *
-# except ImportError:
-#     pass
+try:
+    from mysite.settings_local import *
+except ImportError:
+    pass
 
 
 
