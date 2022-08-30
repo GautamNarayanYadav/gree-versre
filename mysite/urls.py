@@ -22,9 +22,9 @@ from g_vers import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index),
+    path('', views.IndexView.as_view(), name='picture'),
     # path('portfolio/', TemplateView.as_view(template_name="portfolio.html")),
-    path('photography/', views.PhotographyView.as_view(), name ='page_data'),
+    path('photography/', views.PhotographyView.as_view(), name='photos'),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
