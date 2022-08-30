@@ -17,11 +17,14 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path, include
+from django.views.generic import TemplateView
 from g_vers import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
+    # path('portfolio/', TemplateView.as_view(template_name="portfolio.html")),
+    path('photography/', views.PhotographyView.as_view(), name ='page_data'),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

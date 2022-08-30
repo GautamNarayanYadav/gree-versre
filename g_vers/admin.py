@@ -1,6 +1,6 @@
 from django.contrib import admin
+from g_vers.models import Song, Photography
 
-# Register your models here.
-from g_vers.models import Song
 
 admin.site.register(Song)
+admin.site.register(Photography)
