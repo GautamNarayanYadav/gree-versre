@@ -92,19 +92,19 @@
         </p>
       </div>
       <div class="portfolio_container layout_padding2">
-        {% for photo in photos %}
+
         <div class="box-1">
+          {% for photo in photos %}
           <div class="img-box b-1">
-<!--            <img src="{% static 'images/p-1.jpg' %}" alt="">-->
             <img src="{{photo.image.url}}" alt="">
-            <h3>{{photo.name}}</h3>
+<!--            <h3>{{photo.name}}</h3>-->
             <div class="btn-box">
               <a href="" class="btn-1">
-
               </a>
             </div>
           </div>
-    {% endfor %}
+                      {% endfor %}
+
 <!--          <div class="img-box b-2">-->
 <!--            <img src="{% static 'images/p-2.jpg' %}" alt="">-->
 <!--            <div class="btn-box">-->
