@@ -20,6 +20,17 @@ class Photography(models.Model):
         return self.name
 
 
+class Contact(models.Model):
+    name = models.CharField(max_length=50)
+    picture = models.ImageField(upload_to="contact/", blank=True, null=True)
+    mobile = models.CharField(max_length=10, blank=True, null=True)
+    address = models.CharField(max_length=50, blank=True, null=True)
+    message = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+
+
 class Song(models.Model):
     name = models.CharField(max_length=100)
 

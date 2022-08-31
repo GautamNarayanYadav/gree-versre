@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic import TemplateView
-from g_vers.models import Photography
+from rest_framework import viewsets
+from g_vers.models import Photography, Contact
+from g_vers.serializers import ContactSerializer
 
 
 class IndexView(TemplateView):
@@ -23,3 +25,13 @@ class PhotographyView(TemplateView):
         # context['auto_data'] = Auto.objects.all()[:4]
         # context['expert_data'] = Expert.objects.all()[:3]
         return context
+
+
+def contact_view(request):
+    model = Contact
+    return render(request, "contact.html")
+
+
+class ContactView(viewsets.ModelViewSet):
+    queryset = Contact.objects.all()
+    serializer_class = ContactSerializer

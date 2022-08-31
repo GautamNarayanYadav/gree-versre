@@ -19,12 +19,20 @@ from django.conf.urls.static import static
 from django.urls import path, include
 from django.views.generic import TemplateView
 from g_vers import views
+from rest_framework import routers
+
+router = routers.DefaultRouter()
+
+router.register('', views.ContactView)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.IndexView.as_view(), name='picture'),
-    # path('portfolio/', TemplateView.as_view(template_name="portfolio.html")),
+    path('about/', TemplateView.as_view(template_name="about.html")),
+    path('contact/', TemplateView.as_view(template_name="contact.html")),
+    path('contacts/', include(router.urls)),
     path('photography/', views.PhotographyView.as_view(), name='photos'),
+
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
