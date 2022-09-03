@@ -235,9 +235,14 @@
                 <figure class="effect-ming tm-video-item">
                     <img src="{{pic.image.url}}" alt="Image" class="img-fluid">
                     <figcaption class="d-flex align-items-center justify-content-center">
-                        <h2>Clocks</h2>
-                        <a href="photo-detail.html"></a>
+<!--                        <h2>{{pic.name}}</h2>-->
+                        <a href="{% url 'pics' pic.id %}"></a>
                     </figcaption>
+                   <div class="card-body">
+            <h5 class="card-title" style="color:white">{{pic.name}}</h5>
+            <p class="card-text" style="color:white">{{pic.description}}</p>
+            <h6 class="card-subtitle mb-2 text-muted">Uploaded: {{pic.upload_date}}</h6>
+            </div>
                 </figure>
           </div>
                  {% endfor %}
