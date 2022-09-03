@@ -13,7 +13,7 @@ class IndexView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
-        context['picture'] = Photography.objects.all()[:8]
+        context['picture'] = Photography.objects.all().order_by('-id')[:8]
         return context
 
 
@@ -22,10 +22,8 @@ class PhotographyView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(PhotographyView, self).get_context_data(**kwargs)
-        context['photos'] = Photography.objects.all()
-        # context['page_data'] = Photography.objects.latest('id')
+        context['photos'] = Photography.objects.all().order_by('-id')
         # context['auto_data'] = Auto.objects.all()[:4]
-        # context['expert_data'] = Expert.objects.all()[:3]
         return context
 
 
