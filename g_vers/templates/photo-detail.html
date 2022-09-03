@@ -28,7 +28,6 @@
   <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
 </head>
 
-
 <body class="sub_page">
 
   <div class="hero_area">
@@ -77,63 +76,52 @@
         </div>
       </div>
     </header>
-    <!-- end header section -->
-  </div>
+<body>
+{% block content %}
+    <div class="container-fluid tm-container-content tm-mt-60">
+        <div class="row tm-mb-90 mt-4">
 
-  <!-- about section -->
+            <div class="col-xl-8 col-lg-7 col-md-6 col-sm-12">
 
-  <section class="about_section layout_padding">
-    <div class="container">
-      <div class="heading_container">
-        <h2>
-          About Studio
-        </h2>
-      </div>
-      <div class="box">
-        <div class="img-box">
-          <img src="{% static 'images/about-img.jpg' %}" alt="">
-          <div class="about_img-bg">
-            <img src="{% static 'images/about-img-bg.png' %}" alt="">
-          </div>
+                <img src="{{ obj.image.url }}" alt="Image" class="img-fluid mb-4">
+            </div>
+            <div class="col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="tm-bg-gray tm-video-details">
+
+                    <div class="row mb-4">
+                        <h2 class="txt btn-outline-secondary" style="font-family: Georgia, serif;">{{ obj.name }}</h2>
+                    </div>
+                    <p class="mb-4">
+                        {{ obj.description }}
+                    </p>
+                    <div class="text-center mb-5">
+                        <a href="{{ obj.image.url }}" download class="btn btn-primary tm-btn-big">Download</a>
+                    </div>                    
+                    <div class="mb-4 d-flex flex-wrap">
+                        <div class="mr-4 mb-2">
+                            <span class="tm-text-gray-dark">Upload By: </span><span class="tm-text-primary">
+                            <a href="{{obj.upload_by_link.url}}">{{obj.upload_by}}</a></span>
+                        </div>
+                        <div class="mr-4 mb-2">
+                            <span class="tm-text-gray-dark">Uploaded: </span><span class="tm-text-primary">{{obj.upload_date}}</span>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <h3 class="tm-text-gray-dark mb-3">License</h3>
+                        <p>Free for both personal and commercial use. No need to pay anything. No need to make any attribution.</p>
+                    </div>
+                    <div>
+                        <h3 class="tm-text-gray-dark mb-3">Tags</h3>
+                        <a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block">{{obj.tag1}}</a>
+                        <a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block">{{obj.tag2}}</a>
+                        <a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block">{{obj.tag3}}</a>
+                        <a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block">{{obj.tag4}}</a>
+                        <a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block">{{obj.tag5}}</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="detail-box">
-          <p>
-                           “Your first 10,000 photographs are your worst.”<br>
-                – Henri Cartier-Bresson<br>
-                “Photography is an austere and blazing poetry of the real.”<br>
-                – Ansel Adams<br>
-                “Photography is the story I fail to put into words.”<br>
-                – Destin Sparks<br>
-                “When words become unclear, I shall focus with photographs. When images become inadequate, I shall be content with silence.”<br>
-                – Ansel Adams<br>
-                “When I photograph I make love.”<br>
-                – Alfred Stieglitz<br>
-            “The negative is the equivalent of the composer’s score and the print the performance.”<br>
-            – Ansel Adams<br>
-            “There is one thing the photo must contain – the humanity of the moment.”<br>
-            – Robert Frank<br>
-            “Photography is a way of feeling, of touching, of loving. What you have caught on film is captured forever… It remembers little things, long after you have forgotten everything.”<br>
-            – Aaron Siskind<br>
-            “If you are out there shooting, things will happen for you. If you’re not out there, you’ll only hear about it.”<br>
-            – Jay Maisel<br>
-            “Photography is the art of making memories tangible.”<br>
-            – Destin Sparks
-          </p>
-          <div>
-            <a href="https://imgautamyadav.pythonanywhere.com/">
-              about More
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </section>
-
-  <!-- end about section -->
-
-
-    <!-- info section -->
+    </div> <!-- container-fluid, tm-container-content -->
   <section class="info_section ">
     <div class="container">
       <div class="info_container">
@@ -143,7 +131,7 @@
               Follow on
             </h4>
           </div>
-          <div class="social_box">
+         <div class="social_box">
             <a href="https://www.facebook.com/gautam.raj.39904">
               <img src="{% static 'images/fb.png' %}" alt="fb">
             </a>
@@ -175,6 +163,6 @@
   <script type="text/javascript" src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
   <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
 
+{% endblock %}
 </body>
-
 </html>

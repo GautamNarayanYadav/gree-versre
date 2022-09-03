@@ -12,7 +12,7 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
 
-  <title>Uliya</title>
+  <title>Capture</title>
 
 
  <!-- bootstrap core css -->
@@ -38,10 +38,10 @@
         <div class="row">
           <div class="col-lg-11 offset-lg-1">
             <nav class="navbar navbar-expand-lg custom_nav-container ">
-              <a class="navbar-brand" href="index.html">
-                <img src="images/logo.png" alt="">
+              <a class="navbar-brand" href="/">
+                <img src="{% static 'images/logo.png' %}" alt="">
                 <span>
-                  Uliya
+                  Capture
                 </span>
               </a>
               </a>
@@ -80,6 +80,19 @@
     <!-- end header section -->
   </div>
 
+  <!-- end contact section -->
+          <div class="w3-ul p-3 mb-2 bg-success p-2 fw-semibold border border-5 animate__animated animate__zoomIn" style="text-align: center;background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);">
+              <p>
+                Name: Gautam Yadav<br>
+              Address: Bagaul, Ramnipatti, Babubarhi,<br>
+              Madhubani, Bihar - 847224<br>
+              Phone number: (+91)<a href="tel:7688905718">7688905718</a><br>
+                E-mail: <a href="mailto:imgautamyadav@gmail.com">
+              E-mail: imgautamyadav@gmail.com</a><br>
+              </p>
+          </div>
+
+  <!-- info section -->
   <!-- contact section -->
 
   <section class="contact_section layout_padding">
@@ -110,6 +123,8 @@
                   <div>
                     <input type="text" name="address" placeholder="Enter your Address/Location">
                   </div>
+                  Upload your photography:📸
+                <input type="file" name="picture" accept="image/png, image/jpeg">
                   <div class="">
                     <input type="text" name="message" placeholder="Message" class="message_input">
                   </div>
@@ -128,11 +143,7 @@
   </section>
 
 
-  <!-- end contact section -->
-
-
-  <!-- info section -->
-  <section class="info_section ">
+  <section class="info_section">
     <div class="container">
       <div class="info_container">
         <div class="info_social">
@@ -142,17 +153,14 @@
             </h4>
           </div>
           <div class="social_box">
-            <a href="">
-              <img src="{% static 'images/fb.png' %}" alt="">
+            <a href="https://www.facebook.com/gautam.raj.39904">
+              <img src="{% static 'images/fb.png' %}" alt="fb">
             </a>
             <a href="">
-              <img src="{% static 'images/twitter.png' %}" alt="">
+              <img src="{% static 'images/linkedin.png' %}" alt="twitter">
             </a>
-            <a href="">
-              <img src="{% static 'images/instagram.png' %}" alt="">
-            </a>
-            <a href="">
-<!--              <img src="{% static 'images/github.png' %}" alt="">-->
+            <a href="https://www.instagram.com/im__gautamyadav/">
+              <img src="{% static 'images/instagram.png' %}" alt="instagram">
             </a>
           </div>
         </div>
@@ -166,8 +174,8 @@
   <section class="container-fluid footer_section">
     <div class="container">
       <p>
-        &copy; 2019 All Rights Reserved By
-        <a href="https://html.design/">Free Html Templates</a>
+        &copy; 2022 All Rights Reserved By
+        <a href="https://imgautamyadav.pythonanywhere.com/">Gautam Yadav</a>
       </p>
     </div>
   </section>

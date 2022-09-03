@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.views.generic import TemplateView
+from django.views.generic import *
 from rest_framework import viewsets
+from rest_framework.generics import get_object_or_404
+
 from g_vers.models import Photography, Contact
 from g_vers.serializers import ContactSerializer
 
@@ -25,6 +27,11 @@ class PhotographyView(TemplateView):
         # context['auto_data'] = Auto.objects.all()[:4]
         # context['expert_data'] = Expert.objects.all()[:3]
         return context
+
+
+def detail_page(request, id):
+    obj = get_object_or_404(Photography, pk=id)
+    return render(request, 'photo-detail.html', {'obj': obj})
 
 
 def contact_view(request):
